@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Chronometer from './components/Chronometer';
-import Header from './components/Header';
+import Chronometer from './componentes/Chronometer';
+import Header from './componentes/Header';
 
 function App() {
   return (
