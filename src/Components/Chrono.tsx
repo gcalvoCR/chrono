@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import Moment from 'moment'
-import moment from 'moment';
 
 interface Information {
   initialTime: moment.Moment;
@@ -11,7 +10,7 @@ interface Information {
 export default function Chrono(){
 
   const [chron, setChron]= useState<Information>({
-    initialTime: moment(),
+    initialTime: Moment(),
     finalTime: 0,
     timeSpent: "",
     isRunning: false
@@ -21,11 +20,11 @@ export default function Chrono(){
   useEffect(() =>{
     setTimeout(() => {
       setChron((prevChron) => {
-        const newTime = moment().diff(prevChron.initialTime)
+        const newTime = Moment().diff(prevChron.initialTime)
         if (prevChron.isRunning){
           return {
             ...prevChron,
-            timeSpent: moment.utc(newTime).format('HH:mm:ss')
+            timeSpent: Moment.utc(newTime).format('HH:mm:ss')
           }
         } else{
           return prevChron
@@ -34,8 +33,6 @@ export default function Chrono(){
     }, 1000)
   }, [chron.timeSpent])
 
-
-
   function start(){
     setChron((prevChron) => {
       const current = Moment()
@@ -43,11 +40,10 @@ export default function Chrono(){
         ...prevChron,
         initialTime: current,
         isRunning: true,
-        timeSpent: moment.utc(0).format('HH:mm:ss')
+        timeSpent: Moment.utc(0).format('HH:mm:ss')
       }
     })  
   }
-
 
   function stop(){
     setChron((prevChron) => {
@@ -59,13 +55,14 @@ export default function Chrono(){
     })  
   }
 
-  console.log(chron)
-
   return(
-    <>
-      <h1>{chron.timeSpent ? chron.timeSpent : "00:00:00"}</h1>
-      <button onClick={start}>Start</button>
-      <button onClick={stop}>Stop and reset</button>
-    </>
+    <main className="main">
+      <h1 className="timer">{chron.timeSpent ? chron.timeSpent : "00:00:00"}</h1>
+      <div className="buttons">
+        <button onClick={start} className="button">Start</button>
+        <button onClick={stop} className="button">Stop and reset</button>
+      </div>
+        
+    </main>
   )
 }

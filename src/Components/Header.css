@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  color: #fff;
+  padding: 20px;
+}
+.header--img {
+  height: 100%;
+  margin-right: 6px;
+}
+
+.header--title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: auto;
+}
+
+.header--project {
+  font-weight: 700;
+  font-size: 12px;
+  justify-content: right;
+}
+
+
