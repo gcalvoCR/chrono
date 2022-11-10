@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Chrono from './components/Chrono';
+import Chronometer from './components/Chronometer';
 import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Chrono/>
+      <Chronometer/>
     </div>
   );
 }

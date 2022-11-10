@@ -7,7 +7,7 @@ interface Information {
   timeSpent: string;
   isRunning: boolean;
 }
-export default function Chrono(){
+export default function Chronometer(){
 
   const [chron, setChron]= useState<Information>({
     initialTime: Moment(),
