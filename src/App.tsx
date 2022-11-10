@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import Chrono from './Components/Chrono';
 
 function App() {
   return (
     <div className="App">
-      <h1>Chrono App</h1>
+      <Chrono/>
     </div>
   );
 }
